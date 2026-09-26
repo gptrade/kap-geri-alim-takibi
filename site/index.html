@@ -20,7 +20,7 @@
   .controls {
     display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px;
   }
-  input, select {
+  input {
     background: var(--panel); border: 1px solid var(--border); color: var(--text);
     padding: 8px 10px; border-radius: 8px; font-size: 0.9rem;
   }
@@ -30,19 +30,27 @@
     color: var(--warn); padding: 8px 12px; border-radius: 8px; margin-bottom: 14px;
     font-size: 0.85rem;
   }
-  table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.83rem; min-width: 920px; }
   thead th {
-    text-align: left; color: var(--muted); font-weight: 500;
+    text-align: right; color: var(--muted); font-weight: 500;
     padding: 8px 10px; border-bottom: 1px solid var(--border);
     position: sticky; top: 0; background: var(--bg);
+    cursor: pointer; user-select: none; white-space: nowrap;
   }
+  thead th:first-child, thead th:nth-child(2) { text-align: left; }
+  thead th:hover { color: var(--text); }
+  thead th .arrow { opacity: 0.4; font-size: 0.7em; margin-left: 3px; }
+  thead th.sorted .arrow { opacity: 1; color: var(--accent); }
   tbody td {
     padding: 10px; border-bottom: 1px solid var(--border); vertical-align: top;
+    text-align: right; white-space: nowrap;
   }
+  tbody td:first-child, tbody td:nth-child(2) { text-align: left; white-space: normal; }
   tbody tr:hover { background: var(--panel); }
   .ticker { font-weight: 600; color: var(--accent); }
   .company { color: var(--muted); font-size: 0.78rem; }
-  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .num { font-variant-numeric: tabular-nums; }
   .review-flag {
     display: inline-block; margin-left: 6px; color: var(--warn); cursor: help;
   }
@@ -52,44 +60,36 @@
     background: var(--green); color: #04220f; font-size: 0.65rem; font-weight: 700;
     padding: 2px 6px; border-radius: 5px; margin-left: 6px; vertical-align: middle;
   }
-  @media (max-width: 700px) {
-    thead { display: none; }
-    table, tbody, tr, td { display: block; width: 100%; }
-    tbody tr { border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; padding: 8px; }
-    tbody td { border: none; padding: 4px 6px; display: flex; justify-content: space-between; gap: 12px; }
-    tbody td::before { content: attr(data-label); color: var(--muted); font-size: 0.75rem; }
-  }
 </style>
 </head>
 <body>
   <h1>Şirket Geri Alımları — BIST</h1>
-  <div class="sub">KAP'a bildirilen "Payların Geri Alınmasına İlişkin Bildirim" duyuruları. Kaynak: kap.org.tr</div>
+  <div class="sub">KAP'a bildirilen "Payların Geri Alınmasına İlişkin Bildirim" duyuruları. Kaynak: kap.org.tr — sütun başlıklarına tıklayarak sırala.</div>
 
   <div id="staleWarning" class="stale-warning">⚠️ Son otomatik kontrol 26 saatten eski görünüyor. GitHub Actions sekmesindeki loglara bakabilirsin.</div>
 
   <div class="controls">
     <input type="text" id="search" placeholder="Ticker veya şirket ara (örn. THYAO)">
-    <select id="sort">
-      <option value="date-desc">Tarihe göre (yeni→eski)</option>
-      <option value="date-asc">Tarihe göre (eski→yeni)</option>
-      <option value="qty-desc">Adede göre (çok→az)</option>
-    </select>
   </div>
 
+  <div class="table-wrap">
   <table>
     <thead>
       <tr>
-        <th>Şirket</th>
-        <th>Bildirim tarihi</th>
-        <th>İşlem tarihi</th>
-        <th class="num">Adet</th>
-        <th class="num">Fiyat</th>
-        <th class="num">Sermaye payı</th>
+        <th data-key="tickers" data-type="str">Şirket<span class="arrow">▾</span></th>
+        <th data-key="publish_date" data-type="date">Bildirim tarihi<span class="arrow">▾</span></th>
+        <th data-key="transaction_date" data-type="date">Son işlem tarihi<span class="arrow">▾</span></th>
+        <th data-key="quantity" data-type="num">Adet (bu işlem)<span class="arrow">▾</span></th>
+        <th data-key="price" data-type="num">Fiyat (bu işlem)<span class="arrow">▾</span></th>
+        <th data-key="pct_this_transaction" data-type="num">Bu işlemin payı<span class="arrow">▾</span></th>
+        <th data-key="total_held_after" data-type="num">Toplam alınan<span class="arrow">▾</span></th>
+        <th data-key="ownership_pct_after" data-type="num">Toplam sermaye payı<span class="arrow">▾</span></th>
         <th>Kaynak</th>
       </tr>
     </thead>
     <tbody id="rows"></tbody>
   </table>
+  </div>
   <div id="emptyState" class="empty-state" style="display:none;">Henüz veri yok. İlk otomatik kontrol tamamlandığında burada görünecek.</div>
 
 <script>
@@ -97,10 +97,13 @@
   const ROWS_EL = document.getElementById('rows');
   const EMPTY_EL = document.getElementById('emptyState');
   const SEARCH_EL = document.getElementById('search');
-  const SORT_EL = document.getElementById('sort');
   const STALE_EL = document.getElementById('staleWarning');
+  const HEADERS = document.querySelectorAll('thead th[data-key]');
 
   let allRows = [];
+  let sortKey = 'publish_date';
+  let sortType = 'date';
+  let sortDir = -1; // newest / largest first by default
 
   function trNum(n, decimals) {
     if (n === null || n === undefined) return '—';
@@ -108,9 +111,9 @@
   }
 
   function priceLabel(r) {
-    if (r.price !== null && r.price !== undefined) return trNum(r.price, 2) + ' TL';
+    if (r.price !== null && r.price !== undefined) return trNum(r.price, 3) + ' TL';
     if (r.price_low !== null && r.price_high !== null && r.price_low !== undefined) {
-      return trNum(r.price_low, 2) + '–' + trNum(r.price_high, 2) + ' TL';
+      return trNum(r.price_low, 3) + '–' + trNum(r.price_high, 3) + ' TL';
     }
     return '—';
   }
@@ -122,10 +125,38 @@
     return new Date(m[3], m[2] - 1, m[1], m[4], m[5]);
   }
 
+  function parseIsoDate(s) {
+    if (!s) return null;
+    const d = new Date(s);
+    return isNaN(d.getTime()) ? null : d;
+  }
+
   function isNew(r) {
     const d = parsePublish(r.publish_date);
     if (!d) return false;
     return (Date.now() - d.getTime()) < 7 * 24 * 3600 * 1000;
+  }
+
+  function sortValue(r, key, type) {
+    if (type === 'date') {
+      if (key === 'publish_date') return parsePublish(r[key]) || new Date(0);
+      return parseIsoDate(r[key]) || new Date(0);
+    }
+    if (type === 'num') {
+      const v = r[key];
+      return (v === null || v === undefined) ? -Infinity : v;
+    }
+    return (r[key] || '').toLowerCase();
+  }
+
+  function updateHeaderStyles() {
+    HEADERS.forEach(th => {
+      const isSorted = th.dataset.key === sortKey;
+      th.classList.toggle('sorted', isSorted);
+      const arrow = th.querySelector('.arrow');
+      if (isSorted) arrow.textContent = sortDir === 1 ? '▴' : '▾';
+      else arrow.textContent = '▾';
+    });
   }
 
   function render() {
@@ -136,44 +167,64 @@
       return hay.includes(q);
     });
 
-    const sortMode = SORT_EL.value;
     rows.sort((a, b) => {
-      if (sortMode === 'qty-desc') return (b.quantity || 0) - (a.quantity || 0);
-      const da = parsePublish(a.publish_date) || new Date(0);
-      const db = parsePublish(b.publish_date) || new Date(0);
-      return sortMode === 'date-asc' ? da - db : db - da;
+      const va = sortValue(a, sortKey, sortType);
+      const vb = sortValue(b, sortKey, sortType);
+      if (va < vb) return -1 * sortDir;
+      if (va > vb) return 1 * sortDir;
+      return 0;
     });
 
     ROWS_EL.innerHTML = '';
     EMPTY_EL.style.display = rows.length ? 'none' : 'block';
+    updateHeaderStyles();
 
     for (const r of rows) {
       const tr = document.createElement('tr');
       tr.innerHTML = `
-        <td data-label="Şirket">
+        <td>
           <span class="ticker">${r.tickers || '—'}</span>${isNew(r) ? '<span class="new-tag">YENİ</span>' : ''}
           <div class="company">${r.company_title || ''}</div>
         </td>
-        <td data-label="Bildirim tarihi">${r.publish_date || '—'}</td>
-        <td data-label="İşlem tarihi">${r.transaction_date || '—'}${r.needs_review ? '<span class="review-flag" title="Otomatik ayrıştırma eksik kaldı, kaynaktan kontrol et">⚠️</span>' : ''}</td>
-        <td data-label="Adet" class="num">${trNum(r.quantity)}</td>
-        <td data-label="Fiyat" class="num">${priceLabel(r)}</td>
-        <td data-label="Sermaye payı" class="num">${r.ownership_pct_after != null ? '%' + trNum(r.ownership_pct_after, 2) : '—'}</td>
-        <td data-label="Kaynak"><a class="src-link" href="${r.source_url}" target="_blank" rel="noopener">KAP →</a></td>
+        <td>${r.publish_date || '—'}</td>
+        <td class="num">${r.transaction_date || '—'}${r.needs_review ? '<span class="review-flag" title="Otomatik ayrıştırma eksik kaldı, kaynaktan kontrol et">⚠️</span>' : ''}</td>
+        <td class="num">${trNum(r.quantity)}</td>
+        <td class="num">${priceLabel(r)}</td>
+        <td class="num">${r.pct_this_transaction != null ? '%' + trNum(r.pct_this_transaction, 4) : '—'}</td>
+        <td class="num">${trNum(r.total_held_after)}</td>
+        <td class="num">${r.ownership_pct_after != null ? '%' + trNum(r.ownership_pct_after, 4) : '—'}</td>
+        <td><a class="src-link" href="${r.source_url}" target="_blank" rel="noopener">KAP →</a></td>
       `;
       ROWS_EL.appendChild(tr);
     }
   }
 
+  HEADERS.forEach(th => {
+    th.addEventListener('click', () => {
+      const key = th.dataset.key;
+      const type = th.dataset.type;
+      if (sortKey === key) {
+        sortDir *= -1;
+      } else {
+        sortKey = key;
+        sortType = type;
+        sortDir = type === 'str' ? 1 : -1;
+      }
+      render();
+    });
+  });
+
   SEARCH_EL.addEventListener('input', render);
-  SORT_EL.addEventListener('change', render);
 
   fetch('kap-buybacks.json', { cache: 'no-store' })
     .then(r => r.ok ? r.json() : [])
     .then(data => {
       allRows = Array.isArray(data) ? data : [];
       if (allRows.length) {
-        const newest = parsePublish(allRows[0].publish_date);
+        const newest = allRows
+          .map(r => parsePublish(r.publish_date))
+          .filter(Boolean)
+          .sort((a, b) => b - a)[0];
         if (newest && (Date.now() - newest.getTime()) > 26 * 3600 * 1000) {
           STALE_EL.style.display = 'block';
         }
