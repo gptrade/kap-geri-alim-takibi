@@ -1,0 +1,54 @@
+name: kap-buyback-tracker
+
+on:
+  schedule:
+    # BIST işlem saatlerinde (10:00-18:30 İstanbul, UTC+3) saatte bir kontrol.
+    # cron UTC'dir: 07:00-16:00 UTC ~= 10:00-19:00 İstanbul.
+    - cron: "0 7-16 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      days_back:
+        description: "Kaç gün geriye taransın (ilk kurulumda büyük bir sayı gir, örn. 400)"
+        required: false
+        default: "7"
+      silent:
+        description: "Telegram mesajı gönderme (ilk kurulumda 'true' yap)"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tracker
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          DAYS_BACK="${{ github.event.inputs.days_back || '7' }}"
+          SILENT_FLAG=""
+          if [ "${{ github.event.inputs.silent }}" = "true" ]; then
+            SILENT_FLAG="--silent"
+          fi
+          python -m tracker.main --days-back "$DAYS_BACK" $SILENT_FLAG
+
+      - name: Commit updated data
+        run: |
+          git config user.name "kap-buyback-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add site/kap-buybacks.json
+          git diff --staged --quiet || git commit -m "Update BIST buyback data [skip ci]"
+          git push
