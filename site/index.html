@@ -186,7 +186,7 @@
           <span class="ticker">${r.tickers || '—'}</span>${isNew(r) ? '<span class="new-tag">YENİ</span>' : ''}
           <div class="company">${r.company_title || ''}</div>
         </td>
-        <td>${r.publish_date || '—'}</td>
+        <td>${r.publish_date || '—'}${r.notice_type ? `<div class="company">${r.notice_type}</div>` : ''}</td>
         <td class="num">${r.transaction_date || '—'}${r.needs_review ? '<span class="review-flag" title="Otomatik ayrıştırma eksik kaldı, kaynaktan kontrol et">⚠️</span>' : ''}</td>
         <td class="num">${trNum(r.quantity)}</td>
         <td class="num">${priceLabel(r)}</td>
