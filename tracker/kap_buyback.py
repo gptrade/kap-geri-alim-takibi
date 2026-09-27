@@ -125,6 +125,7 @@ class BuybackRow:
     ownership_pct_after: float | None  # total % of capital held to date
     source_url: str
     needs_review: bool = False
+    notice_type: str | None = None  # KAP's "Özet Bilgi" - e.g. a program launch vs. a transaction report
     raw_fields: dict = field(default_factory=dict)
 
 
@@ -138,10 +139,19 @@ def _tr_lower(s: str) -> str:
 
 def _label_value_pairs(soup: BeautifulSoup) -> dict[str, str]:
     """Two-column <tr><td>Label</td><td>Value</td></tr> rows (the info table
-    above the transaction-detail table). Keyed by normalized label text."""
+    above the transaction-detail table). Keyed by normalized label text.
+
+    KAP wraps every info block in its own nested <table> (a <tr><td> whose
+    single cell contains a whole separate table). BeautifulSoup's find_all()
+    recurses into that nesting by default, so counting a row's cells with
+    plain find_all(["td","th"]) also counts every cell of any table nested
+    inside it - a wrapper row that visually has 1 cell then looks like it
+    has 8+ (all of the nested table's cells bleeding through), and real
+    label/value rows get garbled together. recursive=False keeps each row
+    to only its own direct cells, regardless of what's nested inside them."""
     pairs: dict[str, str] = {}
     for tr in soup.find_all("tr"):
-        tds = tr.find_all(["td", "th"])
+        tds = tr.find_all(["td", "th"], recursive=False)
         if len(tds) != 2:
             continue
         label = tds[0].get_text(" ", strip=True)
@@ -159,15 +169,27 @@ def _find_field(pairs: dict[str, str], *needles: str) -> str | None:
     return None
 
 
+def _direct_rows(table) -> list:
+    """A table's own data rows: its <tbody>'s direct <tr> children if it has
+    one, else its own direct <tr> children. Deliberately not recursive, for
+    the same nested-table reason as _label_value_pairs above - otherwise a
+    table that wraps other tables would return every nested row mixed in
+    with its own, at the wrong structural level."""
+    container = table.find("tbody", recursive=False) or table
+    return container.find_all("tr", recursive=False)
+
+
 def _find_detail_rows(soup: BeautifulSoup) -> list[dict[str, str]]:
     """Find the multi-column 'Geri Alım İşlemlerinin Detayları' table (one
     row per transaction date) and return each data row as a dict keyed by
-    its (normalized) column header. Returns [] if no such table is found."""
+    its (normalized) column header. Returns [] if no such table exists in
+    this disclosure - which is expected and not an error for a "program
+    just launched, no purchases yet" announcement."""
     for table in soup.find_all("table"):
-        rows = table.find_all("tr")
+        rows = _direct_rows(table)
         if not rows:
             continue
-        header_cells = rows[0].find_all(["th", "td"])
+        header_cells = rows[0].find_all(["th", "td"], recursive=False)
         if len(header_cells) < 4:
             continue
         headers = [_tr_lower(c.get_text(" ", strip=True)) for c in header_cells]
@@ -176,7 +198,7 @@ def _find_detail_rows(soup: BeautifulSoup) -> list[dict[str, str]]:
             continue
         out = []
         for tr in rows[1:]:
-            cells = tr.find_all(["td", "th"])
+            cells = tr.find_all(["td", "th"], recursive=False)
             if len(cells) != len(headers):
                 continue
             values = [c.get_text(" ", strip=True) for c in cells]
@@ -225,6 +247,15 @@ def parse_buyback_detail(disclosure_index: int, publish_date: str,
         return row
 
     soup = BeautifulSoup(html, "html.parser")
+    pairs = _label_value_pairs(soup)
+
+    # "Özet Bilgi" ("Summary") says what kind of buyback notice this is.
+    # Some are just "program launched" announcements with zero transactions
+    # yet (Özet Bilgi contains "Başlatılması") - that is not a parsing
+    # failure, there is genuinely no transaction to report.
+    summary = pairs.get("özet bilgi") or ""
+    row.notice_type = summary or None
+    is_launch_announcement = "başlat" in _tr_lower(summary)
 
     # --- 1. Latest transaction from the detail table ---
     detail_rows = _find_detail_rows(soup)
@@ -265,10 +296,10 @@ def parse_buyback_detail(disclosure_index: int, publish_date: str,
     if m_pct:
         row.ownership_pct_after = _parse_tl_number("%" + m_pct.group(1))
 
-    # A full parse needs at least the latest transaction's date+quantity.
-    # The cumulative narrative numbers are a bonus - flag review if missing
-    # too, but don't discard the per-transaction data we did get.
-    if row.transaction_date is None or row.quantity is None:
+    # A full parse needs at least the latest transaction's date+quantity -
+    # UNLESS this is a program-launch announcement with no transactions
+    # yet, in which case having none is correct, not a parsing failure.
+    if (row.transaction_date is None or row.quantity is None) and not (is_launch_announcement and not detail_rows):
         row.needs_review = True
 
     if row.needs_review:
@@ -279,7 +310,6 @@ def parse_buyback_detail(disclosure_index: int, publish_date: str,
         # from the HTML this API actually returns, so label/value pairs
         # alone (which depend on guessing the right tags) aren't enough to
         # diagnose a mismatch - the raw markup shows the real structure.
-        pairs = _label_value_pairs(soup)
         if latest:
             pairs["__latest_detail_row__"] = str(latest)
         pairs["__detail_rows_found__"] = str(len(detail_rows))
