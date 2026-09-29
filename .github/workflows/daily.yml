@@ -4,7 +4,7 @@ on:
   schedule:
     # BIST işlem saatlerinde (10:00-18:30 İstanbul, UTC+3) saatte bir kontrol.
     # cron UTC'dir: 07:00-16:00 UTC ~= 10:00-19:00 İstanbul.
-    - cron: "0 7-16 * * 1-5"
+       - cron: "15 7-16 * * 1-5"
   workflow_dispatch:
     inputs:
       days_back:
