@@ -132,3 +132,24 @@ if __name__ == "__main__":
     test_parse_buyback_detail_missing_body_flags_review()
     test_parse_buyback_detail_unrecognizable_table_flags_review_with_raw_fields()
     print("All tests passed.")
+
+
+def _detail(html):
+    return {"disclosure": {"disclosureBasic": {"disclosureId": "x"}}, "disclosureBody": [html]}
+
+
+def test_future_dated_row_not_picked_as_latest():
+    # Şirket bir satırda yılı yanlış yazmış (2029): son işlem 25.09.2026 satırı olmalı
+    html = SAMPLE_HTML.replace("<td>23.09.2026</td>", "<td>23.09.2029</td>")
+    row = parse_buyback_detail(disclosure_index=1, publish_date="26.09.2026 09:00:00",
+                               company_title="X", tickers="TTKOM", detail=_detail(html))
+    assert row.transaction_date == "2026-09-25" and row.quantity == 365000.0
+    assert row.needs_review is False
+
+
+def test_all_rows_future_dated_uses_publish_date_and_flags_review():
+    # LIDER, 29.09.2026: tek satır, işlem tarihi 29.09.2029 yazılmış
+    html = SAMPLE_HTML.replace("<td>23.09.2026</td>", "<td>23.09.2029</td>").replace("<td>25.09.2026</td>", "<td>29.09.2029</td>")
+    row = parse_buyback_detail(disclosure_index=2, publish_date="29.09.2026 19:50:53",
+                               company_title="LDR", tickers="LIDER", detail=_detail(html))
+    assert row.transaction_date == "2026-09-29" and row.needs_review is True

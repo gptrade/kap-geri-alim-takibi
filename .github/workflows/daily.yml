@@ -2,9 +2,9 @@ name: kap-buyback-tracker
 
 on:
   schedule:
-    # BIST işlem saatlerinde (10:00-18:30 İstanbul, UTC+3) saatte bir kontrol.
-    # cron UTC'dir: 07:00-16:00 UTC ~= 10:00-19:00 İstanbul.
-       - cron: "15 7-16 * * 1-5"
+    # Her saat (haftanın her günü): geri alım bildirimlerinin çoğu seans sonrası, akşam saatlerinde KAP'a düşer.
+    # Dakika 05: tam saat başı (:00) GitHub'ın en yoğun anı, zamanlanmış işler orada en çok gecikir ya da atlanır.
+    - cron: "5 * * * *"
   workflow_dispatch:
     inputs:
       days_back:
@@ -18,6 +18,11 @@ on:
 
 permissions:
   contents: write
+
+# Gecikmeli iki çalışma üst üste binmesin (aynı dosyaya commit çakışması)
+concurrency:
+  group: kap-buyback-tracker
+  cancel-in-progress: false
 
 jobs:
   run:
@@ -51,4 +56,5 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add site/kap-buybacks.json
           git diff --staged --quiet || git commit -m "Update BIST buyback data "
+          git pull --rebase -q || true
           git push

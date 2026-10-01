@@ -260,17 +260,31 @@ def parse_buyback_detail(disclosure_index: int, publish_date: str,
     # --- 1. Latest transaction from the detail table ---
     detail_rows = _find_detail_rows(soup)
     latest = None
+    bad_date = False
+    pub_dt = None
     if detail_rows:
         parsed = [(_parse_date(_detail_field(r, "işlem tarih")), r) for r in detail_rows]
         dated = [(d, r) for d, r in parsed if d]
-        if dated:
+        # Şirketler bazen işlem tarihini yanlış yazar (ör. 2026 yerine 2029). Bildirimden sonraki bir tarih
+        # "en son işlem" seçilmesin: yalnız bildirim tarihine (+1 gün) kadar olan satırlar aday.
+        pub_dt = _publish_dt(publish_date)
+        limit = (pub_dt.date() + timedelta(days=1)).isoformat() if pub_dt else None
+        plausible = [(d, r) for d, r in dated if not limit or d <= limit]
+        if plausible:
+            latest_date, latest = max(plausible, key=lambda pair: pair[0])
+        elif dated:
             latest_date, latest = max(dated, key=lambda pair: pair[0])
+            bad_date = True
         else:
             latest = detail_rows[-1]  # fall back to last row, undated
 
     if latest:
         tx_date_raw = _detail_field(latest, "işlem tarih")
         row.transaction_date = _parse_date(tx_date_raw) if tx_date_raw else None
+        if bad_date and pub_dt:
+            # tüm satırların tarihi bildirimden sonra: bildirim günü kullanılır, kayıt elle kontrole işaretlenir
+            row.transaction_date = pub_dt.date().isoformat()
+            row.needs_review = True
 
         qty_raw = _detail_field(latest, "nominal tutar", exclude="önce")
         row.quantity = _parse_tl_number(qty_raw) if qty_raw else None
