@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1671272,
+    "disclosure_id": "4028328ca0b8418601a0fbf9c3b67c5f",
+    "publish_date": "02.10.2026 12:39:46",
+    "company_title": "DAP GAYRİMENKUL GELİŞTİRME A.Ş.",
+    "tickers": "DAPGM",
+    "transaction_date": "2026-10-02",
+    "price": 3.001,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1000000.0,
+    "pct_this_transaction": 0.03774,
+    "total_held_after": null,
+    "ownership_pct_after": 0.4,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1671272",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1671099,
     "disclosure_id": "4028328ca0b8418601a0fb42139b709c",
     "publish_date": "02.10.2026 09:17:19",
