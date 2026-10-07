@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1674845,
+    "disclosure_id": "4028328ca0b8418601a11643646c69f5",
+    "publish_date": "07.10.2026 16:23:59",
+    "company_title": "KONYA KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "tickers": "KONKA",
+    "transaction_date": "2026-10-06",
+    "price": 9.33,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 985582.0,
+    "pct_this_transaction": 0.25271,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1674845",
+    "needs_review": false,
+    "notice_type": "06.10.2026 Tarihli Pay Geri Alım Bildirimine İlişkin Düzeltme",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1674676,
     "disclosure_id": "4028328ca0b8418501a1163fa00a564c",
     "publish_date": "07.10.2026 15:04:59",
