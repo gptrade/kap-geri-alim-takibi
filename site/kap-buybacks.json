@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1674676,
+    "disclosure_id": "4028328ca0b8418501a1163fa00a564c",
+    "publish_date": "07.10.2026 15:04:59",
+    "company_title": "PASİFİK TEKNOLOJİ A.Ş.",
+    "tickers": "PATEK",
+    "transaction_date": "2026-10-07",
+    "price": 14.7,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1000000.0,
+    "pct_this_transaction": 0.14816,
+    "total_held_after": 2040033.0,
+    "ownership_pct_after": 0.3023,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1674676",
+    "needs_review": false,
+    "notice_type": "07.10.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1674082,
     "disclosure_id": "4028328da0b8438601a1151a4272196b",
     "publish_date": "07.10.2026 09:44:13",
