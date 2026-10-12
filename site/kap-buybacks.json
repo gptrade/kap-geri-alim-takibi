@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1679859,
+    "disclosure_id": "4028328ca0b8418601a1315b95ad55c9",
+    "publish_date": "12.10.2026 21:26:07",
+    "company_title": "EGEYAPI AVRUPA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "EGEGY",
+    "transaction_date": "2026-10-12",
+    "price": 17.157,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 139596.0,
+    "pct_this_transaction": 0.0698,
+    "total_held_after": null,
+    "ownership_pct_after": 3.26691,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1679859",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemi Düzeltme",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1679855,
     "disclosure_id": "4028328ca0b8418601a1311d7c6b54d8",
     "publish_date": "12.10.2026 20:39:21",
