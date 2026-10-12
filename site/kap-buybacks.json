@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1679342,
+    "disclosure_id": "4028328ca0b8418501a130010c853edc",
+    "publish_date": "12.10.2026 15:44:47",
+    "company_title": "DCT TRADİNG DIŞ TİCARET A.Ş.",
+    "tickers": "DCTTR",
+    "transaction_date": "2026-10-12",
+    "price": 3.44,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 17800.0,
+    "pct_this_transaction": 0.00456,
+    "total_held_after": 3221075.0,
+    "ownership_pct_after": 0.83,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1679342",
+    "needs_review": false,
+    "notice_type": "12.10.2026 Tarihli Pay Geri Alım İşlemleri Hakkında",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1678898,
     "disclosure_id": "4028328da0b8438a01a12ec149a11bb7",
     "publish_date": "12.10.2026 09:20:29",
