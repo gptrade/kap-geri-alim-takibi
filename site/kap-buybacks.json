@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1682361,
+    "disclosure_id": "4028328ca0b8418501a13ad714fb5102",
+    "publish_date": "14.10.2026 19:54:43",
+    "company_title": "TATLIPINAR ENERJİ ÜRETİM A.Ş.",
+    "tickers": "TATEN",
+    "transaction_date": "2026-10-14",
+    "price": 4.82,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 100000.0,
+    "pct_this_transaction": 0.00891,
+    "total_held_after": null,
+    "ownership_pct_after": 0.409,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1682361",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınmasına İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1682357,
     "disclosure_id": "4028328da0b8438a01a13b45eb233059",
     "publish_date": "14.10.2026 19:37:48",
