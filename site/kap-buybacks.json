@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1682798,
+    "disclosure_id": "4028328da0b8438601a140f41e7c28c8",
+    "publish_date": "15.10.2026 23:00:58",
+    "company_title": "AYES ÇELİK HASIR VE ÇİT SANAYİ A.Ş.",
+    "tickers": "AYES",
+    "transaction_date": "2026-10-15",
+    "price": 7.4,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 12500000.0,
+    "pct_this_transaction": 2.5,
+    "total_held_after": null,
+    "ownership_pct_after": 2.5,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1682798",
+    "needs_review": false,
+    "notice_type": "15.10.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1682794,
     "disclosure_id": "4028328da0b8438901a140a3e4571498",
     "publish_date": "15.10.2026 20:38:59",
