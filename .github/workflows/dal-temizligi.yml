@@ -1,0 +1,28 @@
+name: dal-temizligi
+
+# Elle tetiklenir: main'e tamamen birleştirilmiş yedek-* ve onizleme-* dallarını siler.
+# Birleştirilmemiş dallara ve data/fin/arastirma dallarına dokunmaz.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  temizle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Birleştirilmiş yedek ve önizleme dallarını sil
+        run: |
+          git fetch -q --prune origin
+          for b in $(git branch -r | sed 's#^ *origin/##' | grep -E '^(yedek|onizleme)-'); do
+            if git merge-base --is-ancestor "origin/$b" origin/main; then
+              git push -q origin --delete "$b" && echo "silindi: $b"
+            else
+              echo "atlandı (birleştirilmemiş): $b"
+            fi
+          done
