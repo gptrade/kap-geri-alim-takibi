@@ -13,9 +13,11 @@ permissions:
   pages: write
   id-token: write
 
+# Her yayın sitenin son hâlini taşır: yenisi gelince bekleyen/takılan eskisi iptal edilir.
+# (7 Ekim'de github-pages ortamında "waiting" kalan bir yayın sonraki tüm yayınları bir hafta durdurdu.)
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   deploy:
@@ -24,6 +26,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
