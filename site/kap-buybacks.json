@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683042,
+    "disclosure_id": "4028328ca0b8418501a143f0be890afe",
+    "publish_date": "16.10.2026 12:00:43",
+    "company_title": "DOF ROBOTİK SANAYİ A.Ş.",
+    "tickers": "DOFRB",
+    "transaction_date": "2026-10-16",
+    "price": 63.5,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 30000.0,
+    "pct_this_transaction": 0.01935,
+    "total_held_after": null,
+    "ownership_pct_after": 0.01935,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683042",
+    "needs_review": false,
+    "notice_type": "16.10.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1682831,
     "disclosure_id": "4028328ca0b8418501a14341b26501eb",
     "publish_date": "16.10.2026 09:28:05",
