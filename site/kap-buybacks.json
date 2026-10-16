@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683255,
+    "disclosure_id": "4028328da0b8438601a1452b793649df",
+    "publish_date": "16.10.2026 18:01:05",
+    "company_title": "MAVİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "tickers": "MAVI",
+    "transaction_date": "2026-10-16",
+    "price": 35.93,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 350000.0,
+    "pct_this_transaction": 0.04405,
+    "total_held_after": null,
+    "ownership_pct_after": 2.3,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683255",
+    "needs_review": false,
+    "notice_type": "16.10.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1683203,
     "disclosure_id": "4028328ca0b8418601a14471f1dd724a",
     "publish_date": "16.10.2026 16:43:34",
