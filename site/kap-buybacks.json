@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683380,
+    "disclosure_id": "4028328ca0b8418601a146302c1d0d28",
+    "publish_date": "16.10.2026 22:44:06",
+    "company_title": "LDR TURİZM A.Ş.",
+    "tickers": "LIDER",
+    "transaction_date": "2026-10-16",
+    "price": 7.9,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 250000.0,
+    "pct_this_transaction": 0.0303,
+    "total_held_after": null,
+    "ownership_pct_after": 2.4545,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683380",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınmasına İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1683376,
     "disclosure_id": "4028328da0b8438601a145e822c25298",
     "publish_date": "16.10.2026 22:07:09",
