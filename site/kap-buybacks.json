@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1682831,
+    "disclosure_id": "4028328ca0b8418501a14341b26501eb",
+    "publish_date": "16.10.2026 09:28:05",
+    "company_title": "MEYSU GIDA SANAYİ VE TİCARET A.Ş.",
+    "tickers": "MEYSU",
+    "transaction_date": "2026-10-15",
+    "price": 7.69,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 11323.0,
+    "pct_this_transaction": 0.0013,
+    "total_held_after": 5710492.0,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1682831",
+    "needs_review": false,
+    "notice_type": "15.10.2026 Tarihli Pay Alım İşlemleri hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1682803,
     "disclosure_id": "4028328ca0b8418501a140092aec76c7",
     "publish_date": "16.10.2026 08:50:34",
