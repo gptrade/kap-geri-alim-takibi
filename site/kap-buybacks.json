@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683068,
+    "disclosure_id": "4028328ca0b8418501a14428188e0d96",
+    "publish_date": "16.10.2026 13:02:00",
+    "company_title": "HACI ÖMER SABANCI HOLDİNG A.Ş.",
+    "tickers": "SAHOL",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683068",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programı Başlatılması",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1683042,
     "disclosure_id": "4028328ca0b8418501a143f0be890afe",
     "publish_date": "16.10.2026 12:00:43",
