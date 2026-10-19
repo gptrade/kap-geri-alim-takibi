@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683762,
+    "disclosure_id": "4028328ca0b8418601a1545ce12f2c14",
+    "publish_date": "19.10.2026 16:34:59",
+    "company_title": "TUREKS TURUNÇ MADENCİLİK İÇ VE DIŞ TİCARET A.Ş.",
+    "tickers": "MARBL",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683762",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Başlatılması Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1683695,
     "disclosure_id": "4028328da0b8438a01a1542b0b431a4f",
     "publish_date": "19.10.2026 15:38:51",
