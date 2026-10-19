@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1683391,
+    "disclosure_id": "4028328ca0b8418601a15284307e7f0d",
+    "publish_date": "19.10.2026 07:56:26",
+    "company_title": "EUROPAP TEZOL KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "tickers": "TEZOL",
+    "transaction_date": "2026-10-16",
+    "price": 7.14,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 42102.0,
+    "pct_this_transaction": 0.00842,
+    "total_held_after": null,
+    "ownership_pct_after": 0.3239,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1683391",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1683380,
     "disclosure_id": "4028328ca0b8418601a146302c1d0d28",
     "publish_date": "16.10.2026 22:44:06",
