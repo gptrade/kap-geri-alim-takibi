@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684189,
+    "disclosure_id": "4028328da0b8438601a155b3246c1433",
+    "publish_date": "19.10.2026 22:47:07",
+    "company_title": "KALYON GÜNEŞ TEKNOLOJİLERİ ÜRETİM A.Ş.",
+    "tickers": "KLYPV",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684189",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Başlatılması hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684188,
     "disclosure_id": "4028328ca0b8418601a1558114a93308",
     "publish_date": "19.10.2026 21:54:44",
