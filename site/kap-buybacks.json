@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684676,
+    "disclosure_id": "4028328da0b8438a01a1596d7a894390",
+    "publish_date": "20.10.2026 20:08:23",
+    "company_title": "AĞAOĞLU AVRASYA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "AAGYO",
+    "transaction_date": "2026-10-20",
+    "price": 7.37,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 47379.0,
+    "pct_this_transaction": 0.00676,
+    "total_held_after": null,
+    "ownership_pct_after": 1.403,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684676",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınmasına İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684669,
     "disclosure_id": "4028328da0b8438601a15a2fea923030",
     "publish_date": "20.10.2026 19:41:36",
