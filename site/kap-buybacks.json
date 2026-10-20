@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684277,
+    "disclosure_id": "4028328da0b8438601a158388e6418c2",
+    "publish_date": "20.10.2026 10:33:14",
+    "company_title": "KIRAÇ GALVANİZ TELEKOMİNİKASYON METAL MAKİNE İNŞAAT ELEKTRİK SANAYİ VE TİCARET A.Ş.",
+    "tickers": "TCKRC",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684277",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programı başlatılması",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684217,
     "disclosure_id": "4028328ca0b8418601a157efb2b74aaa",
     "publish_date": "20.10.2026 09:11:59",
