@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684683,
+    "disclosure_id": "4028328da0b8438901a15a298fc50333",
+    "publish_date": "20.10.2026 21:44:00",
+    "company_title": "AKİŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "AKSGY",
+    "transaction_date": "2026-10-20",
+    "price": 9.06,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 30000.0,
+    "pct_this_transaction": 0.00124,
+    "total_held_after": null,
+    "ownership_pct_after": 0.7566,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684683",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınmasına İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684680,
     "disclosure_id": "4028328ca0b8418601a15a6306ee6bf1",
     "publish_date": "20.10.2026 21:09:49",
