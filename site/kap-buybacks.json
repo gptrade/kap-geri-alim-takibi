@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684201,
+    "disclosure_id": "4028328da0b8438901a157d98dd066a3",
+    "publish_date": "20.10.2026 08:48:44",
+    "company_title": "KARTONSAN KARTON SANAYİ VE TİCARET A.Ş.",
+    "tickers": "KARTN",
+    "transaction_date": "2026-10-19",
+    "price": 95.02,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 90000.0,
+    "pct_this_transaction": 0.12,
+    "total_held_after": null,
+    "ownership_pct_after": 0.3607,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684201",
+    "needs_review": false,
+    "notice_type": "19.10.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684190,
     "disclosure_id": "4028328da0b8438a01a154d719b92b5a",
     "publish_date": "20.10.2026 07:16:38",
