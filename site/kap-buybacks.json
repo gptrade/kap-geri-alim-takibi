@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684680,
+    "disclosure_id": "4028328ca0b8418601a15a6306ee6bf1",
+    "publish_date": "20.10.2026 21:09:49",
+    "company_title": "CVK MADEN İŞLETMELERİ SANAYİ VE TİCARET A.Ş.",
+    "tickers": "CVKMD",
+    "transaction_date": "2026-10-20",
+    "price": 11.91,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 750000.0,
+    "pct_this_transaction": 0.01984,
+    "total_held_after": null,
+    "ownership_pct_after": 0.35362,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684680",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684676,
     "disclosure_id": "4028328da0b8438a01a1596d7a894390",
     "publish_date": "20.10.2026 20:08:23",
