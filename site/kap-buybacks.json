@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1684726,
+    "disclosure_id": "4028328da0b8438a01a15d04560e5354",
+    "publish_date": "21.10.2026 09:21:05",
+    "company_title": "AKFEN GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "AKFGY",
+    "transaction_date": "2026-10-20",
+    "price": 2.33,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 250000.0,
+    "pct_this_transaction": 0.00641,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1684726",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programı dahilindeki azami pay sayısının artırılması hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1684708,
     "disclosure_id": "4028328ca0b8418601a15cff21887238",
     "publish_date": "21.10.2026 08:52:08",
