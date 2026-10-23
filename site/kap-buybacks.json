@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1687024,
+    "disclosure_id": "4028328da0b8438a01a169dc078255ee",
+    "publish_date": "23.10.2026 20:45:22",
+    "company_title": "TURKCELL İLETİŞİM HİZMETLERİ A.Ş.",
+    "tickers": "TCELL",
+    "transaction_date": "2026-10-23",
+    "price": 86.75,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 3201696.0,
+    "pct_this_transaction": 0.14553,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1687024",
+    "needs_review": false,
+    "notice_type": "Geri Alım İşlemleri Hakkında",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1687023,
     "disclosure_id": "4028328da0b8438901a1698dcfb27a9d",
     "publish_date": "23.10.2026 20:42:22",
