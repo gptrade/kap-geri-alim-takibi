@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1686470,
+    "disclosure_id": "4028328da0b8438601a1682dd93a1414",
+    "publish_date": "23.10.2026 12:55:08",
+    "company_title": "SANİFOAM ENDÜSTRİ VE TÜKETİM ÜRÜNLERİ SANAYİ TİCARET A.Ş.",
+    "tickers": "SANFM",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1686470",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Başlatılması Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1686128,
     "disclosure_id": "4028328da0b8438a01a1641e615714fc",
     "publish_date": "23.10.2026 09:06:09",
