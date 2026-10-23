@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1686556,
+    "disclosure_id": "4028328ca0b8418601a1688885174a40",
+    "publish_date": "23.10.2026 14:33:54",
+    "company_title": "İSVEA SERAMİK VE BANYO ÜRÜNLERİ SANAYİ A.Ş.",
+    "tickers": "ISVEA",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1686556",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programı Başlatılması",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1686470,
     "disclosure_id": "4028328da0b8438601a1682dd93a1414",
     "publish_date": "23.10.2026 12:55:08",
