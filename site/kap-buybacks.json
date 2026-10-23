@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1686128,
+    "disclosure_id": "4028328da0b8438a01a1641e615714fc",
+    "publish_date": "23.10.2026 09:06:09",
+    "company_title": "GENTAŞ DEKORATİF YÜZEYLER SANAYİ VE TİCARET A.Ş.",
+    "tickers": "GENTS",
+    "transaction_date": "2026-10-22",
+    "price": 3.43,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 262115.0,
+    "pct_this_transaction": 0.03495,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1686128",
+    "needs_review": false,
+    "notice_type": "22 Ekim 2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1686125,
     "disclosure_id": "4028328da0b8438a01a16757fb8c1f20",
     "publish_date": "23.10.2026 09:00:53",
