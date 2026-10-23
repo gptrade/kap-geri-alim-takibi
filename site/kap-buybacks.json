@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1686833,
+    "disclosure_id": "4028328da0b8438a01a16919724348e7",
+    "publish_date": "23.10.2026 17:11:54",
+    "company_title": "OYLUM SINAİ YATIRIMLAR A.Ş.",
+    "tickers": "OYLUM",
+    "transaction_date": "2026-10-22",
+    "price": 6.0,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 100000.0,
+    "pct_this_transaction": 0.11765,
+    "total_held_after": null,
+    "ownership_pct_after": 5.0,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1686833",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Revize Edilmesi",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1686556,
     "disclosure_id": "4028328ca0b8418601a1688885174a40",
     "publish_date": "23.10.2026 14:33:54",
