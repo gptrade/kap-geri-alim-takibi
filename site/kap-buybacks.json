@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1687052,
+    "disclosure_id": "4028328ca16c7de401a16e671e410095",
+    "publish_date": "26.10.2026 05:52:58",
+    "company_title": "ÖZYAŞAR TEL VE GALVANİZLEME SANAYİ A.Ş.",
+    "tickers": "OZYSR",
+    "transaction_date": "2026-10-23",
+    "price": 11.499,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1303700.0,
+    "pct_this_transaction": 0.30812,
+    "total_held_after": null,
+    "ownership_pct_after": 0.3081,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1687052",
+    "needs_review": false,
+    "notice_type": "23 Ekim 2026 Tarihli Pay Geri Alım İşlemlerine İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1687037,
     "disclosure_id": "4028328da0b8438a01a16c68fba9574a",
     "publish_date": "24.10.2026 09:05:24",
