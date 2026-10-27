@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1688067,
+    "disclosure_id": "4028328ca16c7de401a17d5d514c0bd0",
+    "publish_date": "27.10.2026 15:38:26",
+    "company_title": "HAREKET PROJE TAŞIMACILIĞI VE YÜK MÜHENDİSLİĞİ A.Ş.",
+    "tickers": "HRKET",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1688067",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Başlatılması Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1687757,
     "disclosure_id": "4028328da16c7fe601a17c133756568f",
     "publish_date": "27.10.2026 09:50:08",
