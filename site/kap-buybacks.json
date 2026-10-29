@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1689168,
+    "disclosure_id": "4028328ca17e4f5f01a1886f912c2ede",
+    "publish_date": "29.10.2026 19:13:19",
+    "company_title": "ORGE ENERJİ ELEKTRİK TAAHHÜT A.Ş.",
+    "tickers": "ORGE",
+    "transaction_date": "2026-10-28",
+    "price": 17.93,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 160000.0,
+    "pct_this_transaction": 0.04,
+    "total_held_after": null,
+    "ownership_pct_after": 2.296,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1689168",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemi",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1689166,
     "disclosure_id": "4028328ca17e4f5e01a1846c551b3a2e",
     "publish_date": "29.10.2026 00:31:24",
