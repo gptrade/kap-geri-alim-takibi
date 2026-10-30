@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1690311,
+    "disclosure_id": "4028328da17e515f01a18e30335614b9",
+    "publish_date": "30.10.2026 22:06:50",
+    "company_title": "DAGİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "tickers": "DAGI",
+    "transaction_date": "2026-10-30",
+    "price": 5.584,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 170101.0,
+    "pct_this_transaction": 0.04253,
+    "total_held_after": null,
+    "ownership_pct_after": 13.47,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1690311",
+    "needs_review": false,
+    "notice_type": "30 Ekim 2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1690283,
     "disclosure_id": "4028328ca17e4f5f01a18e160be01830",
     "publish_date": "30.10.2026 21:38:52",
