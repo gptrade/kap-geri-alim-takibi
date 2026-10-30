@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1690283,
+    "disclosure_id": "4028328ca17e4f5f01a18e160be01830",
+    "publish_date": "30.10.2026 21:38:52",
+    "company_title": "AKFEN GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "AKFGY",
+    "transaction_date": "2026-10-30",
+    "price": 2.16,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 400000.0,
+    "pct_this_transaction": 0.01026,
+    "total_held_after": null,
+    "ownership_pct_after": 2.023,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1690283",
+    "needs_review": false,
+    "notice_type": "30.10.2026 Tarihli Pay Geri Alım İşlemleri Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1690257,
     "disclosure_id": "4028328da17e515d01a18db2e5b371ed",
     "publish_date": "30.10.2026 20:43:08",
