@@ -72,6 +72,32 @@ TOTAL_HELD_RE = re.compile(
 TOTAL_PCT_RE = re.compile(
     r"sermay\w*\s*(?:oran[ıi]|pay[ıi])\D{0,15}%\s*([\d,]+)", re.IGNORECASE
 )
+PCT_ANY_RE = re.compile(r"%\s*(\d+(?:[.,]\d+)?)")
+
+
+def ownership_pct(text: str) -> float | None:
+    """Şirketin işlemden sonra elindeki toplam payın sermayeye oranı (açıklama metninden).
+
+    Metinde genelde iki oran vardır: "bu işlemin Şirket sermayesine oranı yaklaşık %0,00227'dir" (işlemin kendisi)
+    ve "Şirketimizin sahip olduğu ARMGD payı, Şirket sermayesinin yaklaşık %3,41431'ine ulaşmıştır" (toplam).
+    Toplamı işaret eden oran seçilir: hemen ardından "ulaş…" gelen ya da "ulaşmıştır/sahip olduğu/toplam" ifadesinden
+    sonra gelen ve önünde "bu işlemin" olmayan son oran. Hiçbiri yoksa eski kalıp, yalnız "bu işlemin" oranı değilse."""
+    best = None
+    for m in PCT_ANY_RE.finditer(text):
+        before = text[max(0, m.start() - 160): m.start()].lower()
+        after = text[m.end(): m.end() + 40].lower()
+        if "sermay" not in before[-90:]:
+            continue
+        if "bu işlemin" in before[-70:] or "işleme konu" in before[-70:]:
+            continue
+        if "ulaş" in after or any(k in before for k in ("ulaşmış", "ulaşmıştır", "sahip olduğu", "sahip olunan", "toplam")):
+            best = m
+    if best is None:
+        m = TOTAL_PCT_RE.search(text)
+        if m and "bu işlemin" not in text[max(0, m.start() - 40): m.start()].lower():
+            return _parse_tl_number("%" + m.group(1))
+        return None
+    return _parse_tl_number("%" + best.group(1))
 
 
 def _parse_tl_number(s: str) -> float | None:
@@ -306,9 +332,7 @@ def parse_buyback_detail(disclosure_index: int, publish_date: str,
     m_total = TOTAL_HELD_RE.search(full_text)
     if m_total:
         row.total_held_after = _parse_tl_number(m_total.group(1))
-    m_pct = TOTAL_PCT_RE.search(full_text)
-    if m_pct:
-        row.ownership_pct_after = _parse_tl_number("%" + m_pct.group(1))
+    row.ownership_pct_after = ownership_pct(full_text)
 
     # A full parse needs at least the latest transaction's date+quantity -
     # UNLESS this is a program-launch announcement with no transactions
@@ -410,3 +434,41 @@ def merge_new_rows(existing: list[dict], new_rows: list[BuybackRow]) -> tuple[li
         seen.add(key)
         actually_new.append(asdict(row))
     return existing + actually_new, actually_new
+
+
+def reparse_ownership(client: "KapClient", rows: list[dict], limit: int, dry: bool = False) -> int:
+    """Kayıtlı işlem bildirimlerinde toplam sahiplik oranını yeniden okur. Önce şüpheliler (oran işlemin kendi oranına
+    eşit ya da boş), sonra diğerleri; en çok `limit` bildirim. Dönüş: değişen kayıt sayısı."""
+    import random
+    tx = [r for r in rows if r.get("quantity")]
+    def suspect(r):
+        o, p = r.get("ownership_pct_after"), r.get("pct_this_transaction")
+        return o is None or (p is not None and abs(o - round(p, 2)) < 0.006) or (p is not None and abs(o - p) < 1e-6)
+    sus = [r for r in tx if suspect(r)]
+    rest = [r for r in tx if not suspect(r)]
+    random.Random(1).shuffle(rest)
+    todo = (sus + rest)[:limit] if not dry else sus[: limit // 2] + rest[: limit - limit // 2]
+    changed = 0
+    for r in todo:
+        try:
+            d = client.disclosure_detail(int(r["disclosure_index"]))
+        except Exception as e:  # noqa: BLE001
+            log.warning("Bildirim %s alınamadı: %s", r.get("disclosure_index"), e)
+            continue
+        html = (d.get("disclosureBody") or [""])[0]
+        if not html:
+            continue
+        text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+        new = ownership_pct(text)
+        m_total = TOTAL_HELD_RE.search(text)
+        held = _parse_tl_number(m_total.group(1)) if m_total else None
+        old = r.get("ownership_pct_after")
+        if new != old:
+            changed += 1
+            log.info("%s %s %s: toplam sahiplik %s -> %s (işlem %s)%s", r.get("disclosure_index"), r.get("tickers"),
+                     r.get("transaction_date"), old, new, r.get("pct_this_transaction"), " [şüpheli]" if suspect(r) else "")
+            if not dry:
+                r["ownership_pct_after"] = new
+                if held is not None:
+                    r["total_held_after"] = held
+    return changed

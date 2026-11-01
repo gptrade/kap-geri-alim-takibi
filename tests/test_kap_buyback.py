@@ -153,3 +153,13 @@ def test_all_rows_future_dated_uses_publish_date_and_flags_review():
     row = parse_buyback_detail(disclosure_index=2, publish_date="29.09.2026 19:50:53",
                                company_title="LDR", tickers="LIDER", detail=_detail(html))
     assert row.transaction_date == "2026-09-29" and row.needs_review is True
+
+
+def test_ownership_pct_prefers_total_over_transaction():
+    from tracker.kap_buyback import ownership_pct
+    armgd = ("işleme konu toplam tutar 650.400 TL olup, bu işlemin Şirket sermayesine oranı yaklaşık %0,00227'dir. "
+             "Bu işlem ile birlikte Şirketimizin sahip olduğu ARMGD payı, Şirket sermayesinin yaklaşık %3,41431'ine ulaşmıştır.")
+    dagi = ("Şirketimizin sahip olduğu DAGI payları 53.863.400 adet paya ulaşmıştır. (Şirket sermayesine oranı % 13,47) İşbu")
+    assert ownership_pct(armgd) == 3.41431
+    assert ownership_pct(dagi) == 13.47
+    assert ownership_pct("Bu işlemin sermayeye oranı %0,5'tir.") is None

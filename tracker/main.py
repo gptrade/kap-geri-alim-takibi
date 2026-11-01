@@ -12,7 +12,7 @@ import argparse
 import logging
 from datetime import date, timedelta
 
-from .kap_buyback import KapClient, fetch_new_buybacks, load_store, save_store, merge_new_rows
+from .kap_buyback import KapClient, fetch_new_buybacks, load_store, save_store, merge_new_rows, reparse_ownership
 from . import telegram_notify
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
@@ -25,7 +25,19 @@ def main() -> None:
                      help="how many days back to scan (KAP caps a single query window at ~2000 rows / ~7 days is safe)")
     ap.add_argument("--silent", action="store_true",
                      help="store data but skip Telegram messages (use for first backfill)")
+    ap.add_argument("--reparse-own", type=int, default=0,
+                     help="kayıtlı işlem bildirimlerinin 'toplam sahiplik' oranını yeniden ayrıştır (en çok N bildirim)")
+    ap.add_argument("--dry", action="store_true", help="--reparse-own ile: yalnız eski/yeni farkını yaz, kaydetme")
     args = ap.parse_args()
+
+    if args.reparse_own:
+        client = KapClient()
+        rows = load_store()
+        changed = reparse_ownership(client, rows, args.reparse_own, dry=args.dry)
+        if not args.dry:
+            save_store(rows)
+        log.info("Toplam sahiplik yeniden ayrıştırıldı: %d kayıt değişti%s", changed, " (deneme, kaydedilmedi)" if args.dry else "")
+        return
 
     since = date.today() - timedelta(days=args.days_back)
     client = KapClient()

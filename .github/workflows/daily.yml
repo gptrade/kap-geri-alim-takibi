@@ -15,6 +15,14 @@ on:
         description: "Telegram mesajı gönderme (ilk kurulumda 'true' yap)"
         required: false
         default: "false"
+      reparse_own:
+        description: "Kayıtlı bildirimlerde toplam sahiplik oranını yeniden ayrıştır (en çok N bildirim; 0 = hayır)"
+        required: false
+        default: "0"
+      dry:
+        description: "reparse_own ile: yalnız farkları yaz, kaydetme"
+        required: false
+        default: "false"
 
 permissions:
   contents: write
@@ -43,6 +51,12 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
+          REPARSE="${{ github.event.inputs.reparse_own || '0' }}"
+          if [ "$REPARSE" != "0" ]; then
+            DRY=""; [ "${{ github.event.inputs.dry }}" = "true" ] && DRY="--dry"
+            python -m tracker.main --reparse-own "$REPARSE" $DRY
+            exit 0
+          fi
           DAYS_BACK="${{ github.event.inputs.days_back || '7' }}"
           SILENT_FLAG=""
           if [ "${{ github.event.inputs.silent }}" = "true" ]; then
