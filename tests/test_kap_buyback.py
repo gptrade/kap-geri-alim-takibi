@@ -163,3 +163,5 @@ def test_ownership_pct_prefers_total_over_transaction():
     assert ownership_pct(armgd) == 3.41431
     assert ownership_pct(dagi) == 13.47
     assert ownership_pct("Bu işlemin sermayeye oranı %0,5'tir.") is None
+    akhan = ("toplam 108.152 adet pay geri alınmıştır. Geri alınan payların şirket sermayesine oranı % 0,03957 seviyesindedir.")
+    assert ownership_pct(akhan) is None

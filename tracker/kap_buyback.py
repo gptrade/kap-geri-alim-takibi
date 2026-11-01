@@ -90,11 +90,14 @@ def ownership_pct(text: str) -> float | None:
             continue
         if "bu işlemin" in before[-70:] or "işleme konu" in before[-70:]:
             continue
-        if "ulaş" in after or any(k in before for k in ("ulaşmış", "ulaşmıştır", "sahip olduğu", "sahip olunan", "toplam")):
+        if "ulaş" in after or any(k in before for k in ("ulaşmış", "sahip olduğu", "sahip olunan", "elinde bulunan", "portföyünde")):
             best = m
     if best is None:
+        # Toplamı işaret eden ifade yoksa eski kalıp; ama yalnız işlemin kendisini anlatan cümleler ("bu işlemin",
+        # "geri alınan payların … oranı", "işleme konu") toplam sayılmaz: değer boş kalır (yanlış değerden iyidir).
         m = TOTAL_PCT_RE.search(text)
-        if m and "bu işlemin" not in text[max(0, m.start() - 40): m.start()].lower():
+        pre = text[max(0, m.start() - 70): m.start()].lower() if m else ""
+        if m and not any(k in pre for k in ("bu işlemin", "geri alınan pay", "işleme konu", "alınmıştır", "alınan payların")):
             return _parse_tl_number("%" + m.group(1))
         return None
     return _parse_tl_number("%" + best.group(1))
