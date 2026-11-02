@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1690971,
+    "disclosure_id": "4028328ca17e4f5e01a19c8552185fef",
+    "publish_date": "02.11.2026 17:01:18",
+    "company_title": "BİLİCİ YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "tickers": "BLCYT",
+    "transaction_date": "2026-11-02",
+    "price": 1.307,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 392095.0,
+    "pct_this_transaction": 0.03921,
+    "total_held_after": 12587585.0,
+    "ownership_pct_after": 1.2588,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1690971",
+    "needs_review": false,
+    "notice_type": "02.11..2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1690416,
     "disclosure_id": "4028328ca17e4f5f01a19af8f36c2dc8",
     "publish_date": "02.11.2026 09:51:01",
