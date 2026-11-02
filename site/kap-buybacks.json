@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1691265,
+    "disclosure_id": "4028328da17e515f01a19df249306b68",
+    "publish_date": "02.11.2026 23:28:54",
+    "company_title": "PC İLETİŞİM VE MEDYA HİZMETLERİ SANAYİ TİCARET A.Ş.",
+    "tickers": "PCILT",
+    "transaction_date": "2026-11-02",
+    "price": 28.332,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 40550.0,
+    "pct_this_transaction": 0.03426,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1691265",
+    "needs_review": false,
+    "notice_type": "02.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1691256,
     "disclosure_id": "4028328ca17e4f5e01a19d3d17d76ee6",
     "publish_date": "02.11.2026 21:38:51",
