@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1690376,
+    "disclosure_id": "4028328da17e515f01a19a9eb07904d6",
+    "publish_date": "02.11.2026 08:12:46",
+    "company_title": "TAB GIDA SANAYİ VE TİCARET A.Ş.",
+    "tickers": "TABGD",
+    "transaction_date": "2026-10-30",
+    "price": 191.2,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 20000.0,
+    "pct_this_transaction": 0.00765,
+    "total_held_after": null,
+    "ownership_pct_after": 0.1707,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1690376",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1690374,
     "disclosure_id": "4028328ca17e4f5e01a1902906a2269f",
     "publish_date": "01.11.2026 17:14:12",
