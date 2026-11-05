@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1692863,
+    "disclosure_id": "4028328da17e515f01a1aa1863cd5c7e",
+    "publish_date": "05.11.2026 08:06:27",
+    "company_title": "BETA ENERJİ VE TEKNOLOJİ A.Ş.",
+    "tickers": "BETAE",
+    "transaction_date": "2026-11-04",
+    "price": 44.078,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 45500.0,
+    "pct_this_transaction": 0.01123,
+    "total_held_after": null,
+    "ownership_pct_after": 0.12136,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1692863",
+    "needs_review": false,
+    "notice_type": "04.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1692861,
     "disclosure_id": "4028328ca17e4f5d01a1aa0cefcc07a4",
     "publish_date": "05.11.2026 07:53:50",
