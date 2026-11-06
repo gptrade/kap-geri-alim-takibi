@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1694481,
+    "disclosure_id": "4028328ca17e4f5f01a1b24a7c3b1b4c",
+    "publish_date": "06.11.2026 22:18:26",
+    "company_title": "SANKO PAZARLAMA İTHALAT İHRACAT A.Ş.",
+    "tickers": "SANKO",
+    "transaction_date": "2026-11-06",
+    "price": 20.76,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1968.0,
+    "pct_this_transaction": 0.00131,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1694481",
+    "needs_review": false,
+    "notice_type": "06.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1694474,
     "disclosure_id": "4028328da17e515f01a1b231daff7fdd",
     "publish_date": "06.11.2026 21:51:09",
