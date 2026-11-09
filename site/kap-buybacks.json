@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1695990,
+    "disclosure_id": "4028328da17e515f01a1c07df9b06415",
+    "publish_date": "09.11.2026 21:17:41",
+    "company_title": "EGE PROFİL TİCARET VE SANAYİ A.Ş.",
+    "tickers": "EGPRO",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1695990",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programı Başlatılması",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1695937,
     "disclosure_id": "4028328da17e515f01a1c0e73ea7671c",
     "publish_date": "09.11.2026 20:44:30",
