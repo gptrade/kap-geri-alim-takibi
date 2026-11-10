@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1696556,
+    "disclosure_id": "4028328ca17e4f5f01a1c5be3d7a4614",
+    "publish_date": "10.11.2026 17:43:03",
+    "company_title": "ATAKEY PATATES GIDA SANAYİ VE TİCARET A.Ş.",
+    "tickers": "ATAKP",
+    "transaction_date": "2026-11-10",
+    "price": 40.11,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 50000.0,
+    "pct_this_transaction": 0.03603,
+    "total_held_after": null,
+    "ownership_pct_after": 1.25,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1696556",
+    "needs_review": false,
+    "notice_type": "10.11.2026 tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1696206,
     "disclosure_id": "4028328da17e515d01a1c1f539181a27",
     "publish_date": "10.11.2026 09:19:58",
