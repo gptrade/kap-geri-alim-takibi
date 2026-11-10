@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1696206,
+    "disclosure_id": "4028328da17e515d01a1c1f539181a27",
+    "publish_date": "10.11.2026 09:19:58",
+    "company_title": "ENDA ENERJİ HOLDİNG A.Ş.",
+    "tickers": "ENDAE",
+    "transaction_date": "2026-11-09",
+    "price": 10.89,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 15000.0,
+    "pct_this_transaction": 0.00343,
+    "total_held_after": null,
+    "ownership_pct_after": 1.9111,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1696206",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1696183,
     "disclosure_id": "4028328da17e515f01a1c13f86601ac1",
     "publish_date": "10.11.2026 06:37:14",
