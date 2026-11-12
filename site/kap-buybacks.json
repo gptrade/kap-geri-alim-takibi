@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1697824,
+    "disclosure_id": "4028328ca17e4f5e01a1d17ebc636bd9",
+    "publish_date": "12.11.2026 23:42:57",
+    "company_title": "METGÜN ENERJİ YATIRIMLARI A.Ş.",
+    "tickers": "METEN",
+    "transaction_date": "2026-11-12",
+    "price": 20.91,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 182611.0,
+    "pct_this_transaction": 0.02876,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1697824",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınmasına İlişkin Bildirim",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1697815,
     "disclosure_id": "4028328da17e515d01a1d10804012dc4",
     "publish_date": "12.11.2026 22:19:41",
