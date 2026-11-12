@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1697815,
+    "disclosure_id": "4028328da17e515d01a1d10804012dc4",
+    "publish_date": "12.11.2026 22:19:41",
+    "company_title": "HOROZ LOJİSTİK KARGO HİZMETLERİ VE TİCARET A.Ş.",
+    "tickers": "HOROZ",
+    "transaction_date": "2026-11-12",
+    "price": 33.94,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 4199016.0,
+    "pct_this_transaction": 4.64041,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1697815",
+    "needs_review": false,
+    "notice_type": "12.11.2026 Tarihli Geri Alım İşlemi Hakkında",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1697814,
     "disclosure_id": "4028328da17e515d01a1d11248752e10",
     "publish_date": "12.11.2026 21:46:48",
