@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1698197,
+    "disclosure_id": "4028328ca17e4f5e01a1d5b7d0e9117a",
+    "publish_date": "13.11.2026 19:35:30",
+    "company_title": "DOFER YAPI MALZEMELERİ SANAYİ VE TİCARET A.Ş.",
+    "tickers": "DOFER",
+    "transaction_date": "2026-11-13",
+    "price": 18.547,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 10215.0,
+    "pct_this_transaction": 0.01832,
+    "total_held_after": null,
+    "ownership_pct_after": 0.14388,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1698197",
+    "needs_review": false,
+    "notice_type": "Payların Geri Alınması İşlemi hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1698182,
     "disclosure_id": "4028328da17e515d01a1d5a551455b00",
     "publish_date": "13.11.2026 19:04:02",
