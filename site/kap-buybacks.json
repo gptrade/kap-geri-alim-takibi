@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1698430,
+    "disclosure_id": "4028328ca17e4f5e01a1e432c76a23b1",
+    "publish_date": "16.11.2026 15:23:06",
+    "company_title": "SUN TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "tickers": "SUNTK",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1698430",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alımına İlişkin Programın Başlatılması",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1698248,
     "disclosure_id": "4028328da17e515f01a1d665e8c06a9d",
     "publish_date": "16.11.2026 09:03:13",
