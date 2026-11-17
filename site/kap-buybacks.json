@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1698686,
+    "disclosure_id": "4028328da17e515d01a1e7f977c9153f",
+    "publish_date": "17.11.2026 08:28:13",
+    "company_title": "SUWEN TEKSTİL SANAYİ PAZARLAMA A.Ş.",
+    "tickers": "SUWEN",
+    "transaction_date": "2026-11-16",
+    "price": 5.496,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 454531.0,
+    "pct_this_transaction": 0.08117,
+    "total_held_after": null,
+    "ownership_pct_after": 4.48868,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1698686",
+    "needs_review": false,
+    "notice_type": "16.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1698683,
     "disclosure_id": "4028328ca17e4f5f01a1e60479e504c2",
     "publish_date": "16.11.2026 23:21:01",
