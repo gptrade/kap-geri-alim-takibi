@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700081,
+    "disclosure_id": "4028328da17e515d01a1eff23f195b52",
+    "publish_date": "18.11.2026 21:39:08",
+    "company_title": "EKİM TURİZM TİCARET VE SANAYİ A.Ş.",
+    "tickers": "EKIM",
+    "transaction_date": "2026-11-18",
+    "price": 15.228,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1000000.0,
+    "pct_this_transaction": 0.12019,
+    "total_held_after": null,
+    "ownership_pct_after": 3.48,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700081",
+    "needs_review": false,
+    "notice_type": "18 Kasım 2026 tarihli pay geri alım işlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700078,
     "disclosure_id": "4028328da17e515f01a1efc35e352447",
     "publish_date": "18.11.2026 20:47:06",
