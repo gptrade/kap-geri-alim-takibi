@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700085,
+    "disclosure_id": "4028328da17e515f01a1f064c8a924a0",
+    "publish_date": "18.11.2026 23:44:04",
+    "company_title": "RAİNBOW POLİKARBONAT SANAYİ TİCARET A.Ş.",
+    "tickers": "RNPOL",
+    "transaction_date": "2026-11-18",
+    "price": 2.1,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 97570.0,
+    "pct_this_transaction": 0.01626,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700085",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım25",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700084,
     "disclosure_id": "4028328ca17e4f5e01a1f022aa610da7",
     "publish_date": "18.11.2026 22:38:15",
