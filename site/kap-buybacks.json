@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700186,
+    "disclosure_id": "4028328da17e515f01a1f305d0e57caa",
+    "publish_date": "19.11.2026 11:57:14",
+    "company_title": "MERKO GIDA SANAYİ VE TİCARET A.Ş.",
+    "tickers": "MERKO",
+    "transaction_date": "2026-11-18",
+    "price": 0.9,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 100000.0,
+    "pct_this_transaction": 0.01176,
+    "total_held_after": null,
+    "ownership_pct_after": 0.51,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700186",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700111,
     "disclosure_id": "4028328da17e515f01a1f237b5716ffe",
     "publish_date": "19.11.2026 09:14:33",
