@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700695,
+    "disclosure_id": "4028328ca17e4f5d01a1f902e807174d",
+    "publish_date": "20.11.2026 15:52:26",
+    "company_title": "TUREKS TURİZM TAŞIMACILIK A.Ş.",
+    "tickers": "TUREX",
+    "transaction_date": "2026-11-19",
+    "price": 4.92,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 627976.0,
+    "pct_this_transaction": 0.05815,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700695",
+    "needs_review": false,
+    "notice_type": "23.09.2026 Tarihli Pay Geri Alım Programının Revize Edilmesi Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700588,
     "disclosure_id": "4028328da17e515d01a1f7fc4ffe79e0",
     "publish_date": "20.11.2026 11:06:04",
