@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700886,
+    "disclosure_id": "4028328da17e515d01a1fa1d68cb15a2",
+    "publish_date": "20.11.2026 21:00:38",
+    "company_title": "EUROPEN ENDÜSTRİ İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "tickers": "EUREN",
+    "transaction_date": "2026-11-20",
+    "price": 2.362,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 808147.0,
+    "pct_this_transaction": 0.03848,
+    "total_held_after": null,
+    "ownership_pct_after": 0.623,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700886",
+    "needs_review": false,
+    "notice_type": "20.11.2026 Pay geri alım işlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700882,
     "disclosure_id": "4028328da17e515f01a1f9f9cf427052",
     "publish_date": "20.11.2026 20:23:42",
