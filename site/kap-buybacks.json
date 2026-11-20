@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700494,
+    "disclosure_id": "4028328ca17e4f5d01a1f78940990b71",
+    "publish_date": "20.11.2026 09:41:51",
+    "company_title": "MENDERES TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "tickers": "MNDRS",
+    "transaction_date": "2026-11-19",
+    "price": 9.0,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 160000.0,
+    "pct_this_transaction": 0.0577,
+    "total_held_after": null,
+    "ownership_pct_after": 0.28606,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700494",
+    "needs_review": false,
+    "notice_type": "19 Kasım 2026 Tarihli Pay Geri Alım İşlemleri Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700482,
     "disclosure_id": "4028328da17e515d01a1f5229c3e7235",
     "publish_date": "20.11.2026 09:01:08",
