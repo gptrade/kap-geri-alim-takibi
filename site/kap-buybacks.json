@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700894,
+    "disclosure_id": "4028328da17e515f01a1f9c8260e3482",
+    "publish_date": "20.11.2026 22:15:25",
+    "company_title": "KALYON GÜNEŞ TEKNOLOJİLERİ ÜRETİM A.Ş.",
+    "tickers": "KLYPV",
+    "transaction_date": "2026-11-20",
+    "price": 49.44,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 128611.0,
+    "pct_this_transaction": 0.02795,
+    "total_held_after": null,
+    "ownership_pct_after": 1.099,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700894",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700892,
     "disclosure_id": "4028328ca17e4f5d01a1fa4bd6c924b3",
     "publish_date": "20.11.2026 21:51:15",
