@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1700588,
+    "disclosure_id": "4028328da17e515d01a1f7fc4ffe79e0",
+    "publish_date": "20.11.2026 11:06:04",
+    "company_title": "ATP YAZILIM VE TEKNOLOJİ A.Ş.",
+    "tickers": "ATATP",
+    "transaction_date": null,
+    "price": null,
+    "price_low": null,
+    "price_high": null,
+    "quantity": null,
+    "pct_this_transaction": null,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1700588",
+    "needs_review": false,
+    "notice_type": "Yeni Pay Geri Alım Programı Başlatılması Hk.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1700494,
     "disclosure_id": "4028328ca17e4f5d01a1f78940990b71",
     "publish_date": "20.11.2026 09:41:51",
