@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1701580,
+    "disclosure_id": "4028328ca1fcb99501a208e42a1f1f72",
+    "publish_date": "23.11.2026 20:29:13",
+    "company_title": "KUZUGRUP GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "KZGYO",
+    "transaction_date": "2026-11-23",
+    "price": 16.03,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 150000.0,
+    "pct_this_transaction": 0.075,
+    "total_held_after": null,
+    "ownership_pct_after": 1.67,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1701580",
+    "needs_review": false,
+    "notice_type": "23.11.2026 tarihli pay geri alım işlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1701572,
     "disclosure_id": "4028328ca1fcb99401a209568c992e53",
     "publish_date": "23.11.2026 20:00:04",
