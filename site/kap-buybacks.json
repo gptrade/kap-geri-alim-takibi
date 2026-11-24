@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1701622,
+    "disclosure_id": "4028328ca1fcb99301a20c13018b3341",
+    "publish_date": "24.11.2026 08:48:37",
+    "company_title": "ARD GRUP BİLİŞİM TEKNOLOJİLERİ A.Ş.",
+    "tickers": "ARDYZ",
+    "transaction_date": "2026-11-23",
+    "price": 44.72,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 10000.0,
+    "pct_this_transaction": 0.0031,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1701622",
+    "needs_review": false,
+    "notice_type": "23.11.2026 Tarihli Hisse Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1701619,
     "disclosure_id": "4028328da1fcbb9e01a20be695da38b5",
     "publish_date": "24.11.2026 07:55:08",
