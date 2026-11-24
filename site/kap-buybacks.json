@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1701914,
+    "disclosure_id": "4028328da1fcbb9e01a20d606c7742bf",
+    "publish_date": "24.11.2026 15:55:54",
+    "company_title": "MİSTRAL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "tickers": "MSGYO",
+    "transaction_date": "2026-09-29",
+    "price": 4.929,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 853423.0,
+    "pct_this_transaction": 0.18167,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1701914",
+    "needs_review": false,
+    "notice_type": "Pay Geri Alım Programının Sonlandırılması Hakkında",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1701819,
     "disclosure_id": "4028328ca1fcb99501a20d58871e3566",
     "publish_date": "24.11.2026 14:38:26",
