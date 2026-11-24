@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1701619,
+    "disclosure_id": "4028328da1fcbb9e01a20be695da38b5",
+    "publish_date": "24.11.2026 07:55:08",
+    "company_title": "AZTEK TEKNOLOJİ ÜRÜNLERİ TİCARET A.Ş.",
+    "tickers": "AZTEK",
+    "transaction_date": "2026-11-23",
+    "price": 2.27,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 1418623.0,
+    "pct_this_transaction": 0.14186,
+    "total_held_after": null,
+    "ownership_pct_after": 0.44106,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1701619",
+    "needs_review": false,
+    "notice_type": "23.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1701593,
     "disclosure_id": "4028328ca1fcb99501a20963179924e4",
     "publish_date": "23.11.2026 23:43:19",
