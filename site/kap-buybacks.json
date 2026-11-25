@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1702240,
+    "disclosure_id": "4028328ca1fcb99401a211aaa2a55af6",
+    "publish_date": "25.11.2026 10:45:48",
+    "company_title": "TÜRKİYE SİGORTA A.Ş.",
+    "tickers": "TURSG",
+    "transaction_date": "2026-11-24",
+    "price": 2.87,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 35850000.0,
+    "pct_this_transaction": 0.17925,
+    "total_held_after": null,
+    "ownership_pct_after": 0.9455,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1702240",
+    "needs_review": false,
+    "notice_type": "Günlük Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1702147,
     "disclosure_id": "4028328ca1fcb99301a21146540f5d9c",
     "publish_date": "25.11.2026 08:57:05",
