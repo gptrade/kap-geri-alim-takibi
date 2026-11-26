@@ -1,12 +1,12 @@
 name: Deploy Pages
 
+# Tetik: kod/site değişikliği (push) ve takipçinin yeni veri commit'lediği turlar (daily.yml workflow_dispatch ile çağırır).
+# Eskiden her saat workflow_run ile, veri değişmese bile yayın yapılıyordu (günde 24 yayın); GitHub Pages bu sık
+# yayınların yaklaşık yarısını "Deployment failed, try again later" ile reddediyordu.
 on:
-     push:
-       branches: [main]
-     workflow_run:
-       workflows: ["kap-buyback-tracker"]
-       types: [completed]
-     workflow_dispatch:
+  push:
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -21,10 +21,9 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deploy1.outputs.page_url }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -33,5 +32,12 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
+      # GitHub Pages ara sıra geçici hata veriyor ("Deployment failed, try again later"): bir kez daha dene.
+      - id: deploy1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.deploy1.outcome == 'failure'
+        run: sleep 45
       - id: deployment
+        if: steps.deploy1.outcome == 'failure'
         uses: actions/deploy-pages@v4

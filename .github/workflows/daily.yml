@@ -26,6 +26,7 @@ on:
 
 permissions:
   contents: write
+  actions: write        # yeni veri commit'lenince Pages yayınını tetiklemek için
 
 # Gecikmeli iki çalışma üst üste binmesin (aynı dosyaya commit çakışması)
 concurrency:
@@ -65,10 +66,20 @@ jobs:
           python -m tracker.main --days-back "$DAYS_BACK" $SILENT_FLAG
 
       - name: Commit updated data
+        id: commit
         run: |
           git config user.name "kap-buyback-bot"
           git config user.email "actions@users.noreply.github.com"
           git add site/kap-buybacks.json
-          git diff --staged --quiet || git commit -m "Update BIST buyback data "
+          if git diff --staged --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -m "Update BIST buyback data "
           git pull --rebase -q || true
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # GITHUB_TOKEN ile yapılan push başka iş akışını tetiklemez; yayını yalnız veri değiştiyse açıkça başlat.
+      - name: Pages yayınını tetikle
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main
