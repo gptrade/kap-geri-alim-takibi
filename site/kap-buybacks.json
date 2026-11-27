@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1703469,
+    "disclosure_id": "4028328ca1fcb99501a21ea12fc33e50",
+    "publish_date": "27.11.2026 23:11:13",
+    "company_title": "AKHAN UN FABRİKASI VE TARIM ÜRÜNLERİ GIDA SANAYİ TİCARET A.Ş.",
+    "tickers": "AKHAN",
+    "transaction_date": "2026-11-27",
+    "price": 22.01,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 131500.0,
+    "pct_this_transaction": 0.04811,
+    "total_held_after": null,
+    "ownership_pct_after": null,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1703469",
+    "needs_review": false,
+    "notice_type": "27.11.2026 Tarihinde Gerçekleştirilen Pay Geri Alım İşlemleri Hakkında.",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1703464,
     "disclosure_id": "4028328da1fcbb9e01a21df22df72a25",
     "publish_date": "27.11.2026 22:27:41",
