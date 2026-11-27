@@ -1,5 +1,24 @@
 [
   {
+    "disclosure_index": 1703102,
+    "disclosure_id": "4028328da1fcbb9e01a21b55ef700e3b",
+    "publish_date": "27.11.2026 07:49:51",
+    "company_title": "SUN TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "tickers": "SUNTK",
+    "transaction_date": "2026-11-26",
+    "price": 13.98,
+    "price_low": null,
+    "price_high": null,
+    "quantity": 30000.0,
+    "pct_this_transaction": 0.00632,
+    "total_held_after": null,
+    "ownership_pct_after": 0.07,
+    "source_url": "https://www.kap.org.tr/tr/Bildirim/1703102",
+    "needs_review": false,
+    "notice_type": "26.11.2026 Tarihli Pay Geri Alım İşlemleri",
+    "raw_fields": {}
+  },
+  {
     "disclosure_index": 1703100,
     "disclosure_id": "4028328ca1fcb99401a218b9dd6e117c",
     "publish_date": "26.11.2026 22:02:06",
